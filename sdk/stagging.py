@@ -12,7 +12,6 @@ def createFolder():
     os.makedirs(folder,exist_ok=True)
     os.makedirs(folder+"/compress",exist_ok=True)
 
-
 def compressingFiles():
     zipfile_name = f"stagging_{str(datetime.now())}.zip"
     with zipfile.ZipFile(folder + "/compress/" +  zipfile_name,"w",zipfile.ZIP_DEFLATED) as zipf:
@@ -46,7 +45,7 @@ def listStagging():
     if(config.stagging()):
         iterable = 1
         for data in config.stagging():
-            print(iterable,">",data.split("_")[1].split(".")[0])
+            print(f"[{iterable}]",">",data.split("_")[1].split(".")[0])
             iterable += 1
         print("")
     else:
