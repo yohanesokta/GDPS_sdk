@@ -9,12 +9,11 @@ parser.add_argument("-s","--stage",action="store_true",help="stagging perubahan 
 parser.add_argument("-l","--list",action="store_true",help="list semua stagging file")
 parser.add_argument("-u","--unstage",action="store_true",help="unstagging perubahan yang telah di stagging")
 parser.add_argument("-v", "--version", action="store_true",help="melihat version aplikasi")
-# parser.add_argument("-p","--push",action="store_true",help="")
-parser.add_argument("push",nargs="+")
+parser.add_argument("push",nargs="?",default="")
+parser.add_argument("origin",nargs="?",default="")
 
 args = parser.parse_args()
 print(args)
-# print(args,"\n")
 
 if (parser.parse_args().version):
     # Version
@@ -32,3 +31,4 @@ elif (args.push):
 else:
     parser.print_help()
     # print(args)
+
