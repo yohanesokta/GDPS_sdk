@@ -4,3 +4,4 @@ dist/setup
 build/setup
 .gdps/compress
 gdpsconfig.json
+.trunk/actions
